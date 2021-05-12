@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 부트스트랩 사용을 위한 jQuery 호출 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- 부트스트랩 사용을 위한 라이브러리 호출 -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/test_data.js"></script>
+
+    <!-- 사용자 정의 css -->
+    <link href="css/justified-nav.css" rel="stylesheet">
+
+
+    <!-- 
+    문제1행 : 외향E 또는 내향I 점수
+    문제2행 : 감각S 또는 직관N 점수
+    문제3행 : 사고T 또는 감정F 점수
+    문제4행 : 판단J 또는 인식P 점수 -->
+
+    <!-- <script>
+        function question(){
+            var obj1 = document.getElementById("questionDisplay");
+            var obj2 = document.getElementById("rating");
+            
+
+            var question = 
+                    ["문제1행1열","문제1행2열","문제1행3열","문제1행4열","문제1행5열","문제1행6열","문제1행7열","문제1행8열",
+"문제2행1열","문제2행2열","문제2행3열","문제2행4열","문제2행5열","문제2행6열","문제2행7열","문제2행8열",
+"문제3행1열","문제3행2열","문제3행3열","문제3행4열","문제3행5열","문제3행6열","문제3행7열","문제3행8열",
+"문제4행1열","문제4행2열","문제4행3열","문제4행4열","문제4행5열","문제4행6열","문제4행7열","문제4행8열"
+                    ];
+            for(var i=0; i<=question.length; i++){
+                obj1.innerHTML=question[i].value;
+                obj2.innerHTML=
+            }
+           
+            
+            for(var i=0; i<=question.length; i++){
+            <input id="rating+q[questionNumber]" type="radio" name="q[questionNumber]" value="[ratingNumber]">
+            <label for="[ratingNumber]">[ratingNumber]</label>
+            }
+            
+        
+        }
+    </script> -->
+    <title>검사시작</title>
+</head>
+
+<body>
+    <!-- 
+    문제를 출력한다.
+    각 문제 밑에 각 별점을 선택하고, 점수를 저장한다.
+    결과보기 버튼을 누르면 저장된 점수를 출력하고, 점수에 맞는 성향을 알려준다.
+    (동일 점수일땐 ESTJ를 우선해서 표시한다.)
+
+
+    --------시간 남으면 진행---------
+    문제를 배열로 저장하고, 저장된 문제를 출력한다.
+    문제는 8문제씩 출력한다.(추후 총16문제 2페이지) -->
+
+
+    <div class="container">
+        <div class="masthead">
+            <h3 class="text-muted">MBTI 검사 홈페이지 만들기</h3>
+            <nav>
+                <ul class="nav nav-justified">
+                    <li><a class="btn-default" href="index.html">MBTI 소개</a></li>
+                    <li><a class="btn-default" href="test.html">검사시작</a></li>
+                    <li><a class="btn-default" href="chrpoint.html">성격지표</a></li>
+                    <li><a class="btn-default" href="references.html">참고자료</a></li>
+                    <!-- <li><a class="btn-default" href="notice.html">게시판</a></li> -->
+                </ul>
+            </nav>
+        </div>
+
+        <!-- question -->
+        <!--  -->
+        <p id="questionDisplay" class="lead"></p>
+        <span id="rating" class="rating"></span>
+        
+        
+        <div id="questionData"></div> <!-- test_data.js 호출 -->
+        <!-- <script>
+            var example = function (){
+                console.log('QQQ')
+                $.ajax({
+                    type:"GET",
+                    url:"C:/Users/son10/OneDrive - re-contextualize efficient channels/java_soldesk/workspace/soldesk_java_easy1/html/MBTI_test/test_question.html",
+                    data : '',
+                    dataType : "html",
+                    success: function(data) {
+                        $('#questionData').append(data);
+                    }
+                    ,error: function(xhr, status, error) {
+                        alert(error);
+                    }
+                });
+
+            }
+            $(document).ready(function(){
+                example();
+            });
+        </script> -->
+        
+        <div>
+            <button type="button" class="btn btn-primary btn-lg" onclick="scoreShow()"
+                
+                style="padding: 16px 80px; margin-top: 30px; margin-left:230px;">결과 보기</button>
+            <!-- <input type="button" value="결과 보기" onclick="scoreShow()"> -->
+        </div>
+
+
+
+        <!-- fotter -->
+        <footer class="footer">
+            <p class="text-muted">&copy; 손기석's Home 2021.04.02</p>
+        </footer>
+    </div><!-- /container -->
+</body>
+
+</html>
